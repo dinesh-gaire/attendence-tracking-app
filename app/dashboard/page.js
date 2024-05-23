@@ -7,7 +7,7 @@ const Dashboard = () => {
   const { setTheme } = useTheme()
 
   useEffect(() => {
-    setTheme('system')
+    setTheme('light')
   }, [])
   
   return (
