@@ -9,10 +9,22 @@ import {
     DialogTitle,
     DialogTrigger,
 } from "@/components/ui/dialog"
+import { Input } from '@/components/ui/input'
+import { useForm } from 'react-hook-form'
   
 
 const AddNewStudent = () => {
     const [open, setOpen] = useState(false)
+    const {
+        register,
+        handleSubmit,
+        watch,
+        formState: { errors },
+      } = useForm()
+
+      const onSubmit=(data)=>{
+        console.log("FormData", data);
+      }
   return (
     <div>
         <Button onClick={()=>setOpen(true)}>
@@ -23,9 +35,44 @@ const AddNewStudent = () => {
                 <DialogHeader>
                 <DialogTitle>Add New Student</DialogTitle>
                 <DialogDescription>
-                    <div>
+                <form onSubmit={handleSubmit(onSubmit)}>
+                    <div className='py-2'>
                         <label>Full Name</label>
+                        <Input placeholder='Ex. Dinesh Gaire'
+                        {...register('name', {required:true})}
+                        />
                     </div>
+                    <div className='py-2 flex flex-col'>
+                        <label>Select Grade</label>
+                        <select className='p-3 border rounded-lg'
+                        {...register('grade', {required:true})}
+                        >
+                            <option value={'5th'}>5th</option>
+                            <option value={'6th'}>6th</option>
+                            <option value={'7th'}>7th</option>
+                            <option value={'8th'}>8th</option>
+                        </select>
+                    </div>
+                    <div className='py-2'>
+                        <label>Contact Number</label>
+                        <Input type="number" placeholder='Ex. 9812345678'
+                        {...register('contact', {required:true})}
+                        />
+                    </div>
+                    <div className='py-2'>
+                        <label>Address</label>
+                        <Input placeholder='Ex. Tinkune, Kathmandu'
+                        {...register('address', {required:true})}
+                        />
+                    </div>
+
+                    <div className='flex gap-3 items-center justify-end mt-5'>
+                        <Button onClick={()=>setOpen(false)} variant='ghost'>Cancel</Button>
+                        <Button
+                            type="submit"
+                        >Save</Button>
+                    </div>
+                </form>
                 </DialogDescription>
                 </DialogHeader>
             </DialogContent>
