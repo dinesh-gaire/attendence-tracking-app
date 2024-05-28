@@ -1,6 +1,6 @@
 "use client"
 import { Button } from '@/components/ui/button'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {
     Dialog,
     DialogContent,
@@ -22,9 +22,10 @@ const AddNewStudent = () => {
         formState: { errors },
       } = useForm()
 
-      const onSubmit=(data)=>{
-        console.log("FormData", data);
+      const onSubmit=async(data)=>{
+
       }
+
   return (
     <div>
         <Button onClick={()=>setOpen(true)}>
