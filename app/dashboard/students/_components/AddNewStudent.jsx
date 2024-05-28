@@ -11,10 +11,12 @@ import {
 } from "@/components/ui/dialog"
 import { Input } from '@/components/ui/input'
 import { useForm } from 'react-hook-form'
+import GlobalApi from '@/app/_services/GlobalApi'
   
 
 const AddNewStudent = () => {
     const [open, setOpen] = useState(false)
+    const [grades, setGrades] = useState([])
     const {
         register,
         handleSubmit,
@@ -22,8 +24,19 @@ const AddNewStudent = () => {
         formState: { errors },
       } = useForm()
 
-      const onSubmit=async(data)=>{
+      useEffect(()=>{
+        GetAllGradesList()
+      },[])
 
+      const GetAllGradesList=()=>{
+        GlobalApi.GetAllGrades().then(resp=>{
+            // console.log(resp.data);
+            setGrades(resp.data)
+        })
+      }
+
+      const onSubmit=async(data)=>{
+        console.log(data);
       }
 
   return (
@@ -48,10 +61,9 @@ const AddNewStudent = () => {
                         <select className='p-3 border rounded-lg'
                         {...register('grade', {required:true})}
                         >
-                            <option value={'5th'}>5th</option>
-                            <option value={'6th'}>6th</option>
-                            <option value={'7th'}>7th</option>
-                            <option value={'8th'}>8th</option>
+                            {grades.map((item,index)=>(
+                                <option key={index} value={item.grade}>{item.grade}</option>
+                            ))}
                         </select>
                     </div>
                     <div className='py-2'>
