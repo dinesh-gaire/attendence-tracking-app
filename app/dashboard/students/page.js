@@ -18,7 +18,7 @@ const Student = () => {
   return (
     <div className='p-7'>
         <h2 className='font-bold text-2xl flex justify-between items-center'>Students
-            <AddNewStudent/>
+            <AddNewStudent refreshData={GetAllStudents}/>
         </h2>
 
         <StudentListTable studentList={studentList} refreshData={GetAllStudents}/>

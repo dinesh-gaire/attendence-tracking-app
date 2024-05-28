@@ -27,7 +27,7 @@ const SideNav = () => {
       id:3,
       name:'Attendence',
       icon:Hand,
-      path:'/dashboard/attendence'
+      path:'/dashboard/attendance'
     },
     {
       id:4,
@@ -52,7 +52,7 @@ const SideNav = () => {
       <hr className='my-5'></hr>
 
       {menuList.map((menu, index)=>(
-        <Link href={menu.path}>
+        <Link key={index} href={menu.path}>
           <h2 className={`flex items-center gap-3 text-md p-4 text-slate-500 hover:bg-primary hover:text-white cursor-pointer rounded-lg my-2 ${path==menu.path&&'bg-primary text-white'}`}>
             <menu.icon/>
             {menu.name}

@@ -1,6 +1,5 @@
 "use client"
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
 import {RegisterLink, LoginLink} from "@kinde-oss/kinde-auth-nextjs/components";
 import { useEffect } from "react";
 import { redirect } from "next/navigation";

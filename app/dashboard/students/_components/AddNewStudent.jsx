@@ -16,7 +16,7 @@ import { toast } from 'sonner'
 import { Loader2, LoaderIcon } from 'lucide-react'
   
 
-const AddNewStudent = () => {
+const AddNewStudent = ({refreshData}) => {
     const [open, setOpen] = useState(false)
     const [grades, setGrades] = useState([])
     const [loading, setLoading] = useState(false)
@@ -45,6 +45,7 @@ const AddNewStudent = () => {
             // console.log("--",resp);
             if(resp.data){
                 reset();
+                refreshData();
                 setOpen(false)
                 toast('New Student Added!');
             }

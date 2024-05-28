@@ -17,6 +17,7 @@ const Header = () => {
           width={35}
           height={35}
           className='rounded-full'
+          alt='profile'
         />
       </div>
     </div>

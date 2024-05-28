@@ -12,3 +12,11 @@ export const STUDENTS = pgTable('students',{
     address:varchar('address',{length:50}).notNull(),
     contact:varchar('contact',{length:11}).notNull()
 })
+
+export const ATTENDANCE = pgTable('attendance',{
+    id:serial('id').primaryKey(),
+    studentId:integer('studentId', {length:11}).notNull(),
+    present:boolean('present').default(false),
+    day:integer('day',{length:11}).notNull(),//22
+    date:varchar('date',{length:20}).notNull()//05/2024
+})
