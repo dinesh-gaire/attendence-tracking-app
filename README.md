@@ -1,38 +1,152 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Attendance Tracking App 📋
 
-## Getting Started
+## Project Overview
 
-First, run the development server:
+The Attendance Tracking App is a modern web application designed to simplify event attendance management. Built with cutting-edge technologies, the app provides an intuitive and efficient solution for organizations to track and analyze event participation.
+
+## 🌟 Key Features
+
+- **Secure Authentication**: Powered by Kinde Auth
+- **Real-time Event Tracking**: Instant attendance logging
+- **Data Visualization**: Interactive charts and statistics
+- **Responsive Design**: Works seamlessly across all devices
+- **Easy-to-Use Interface**: Intuitive user experience
+
+## 🛠 Technology Stack
+
+- **Frontend**: 
+  - Next.js (React framework)
+  - React
+  - Tailwind CSS
+  - Recharts (Data Visualization)
+
+- **Backend**:
+  - Neon Database
+  - Drizzle ORM
+  - Kinde Auth
+
+## 📋 Prerequisites
+
+Before you begin, ensure you have:
+- Node.js (version 16.0.0 or higher)
+- npm or yarn package manager
+- A Kinde Auth account
+- A Neon Database account
+
+## 🚀 Getting Started
+
+### 1. Clone the Repository
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/dinesh-gaire/attendance-tracking-app.git
+cd attendance-tracking-app
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Install Dependencies
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```bash
+# Using npm
+npm install
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+# Using yarn
+yarn install
+```
 
-## Learn More
+### 3. Configure Environment Variables
 
-To learn more about Next.js, take a look at the following resources:
+Create a `.env.local` file in the project root with the following configurations:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+# Kinde Authentication
+KINDE_CLIENT_ID=your_client_id
+KINDE_CLIENT_SECRET=your_client_secret
+KINDE_ISSUER_URL=https://your-kinde-subdomain.kinde.com
+KINDE_SITE_URL=http://localhost:3000
+KINDE_POST_LOGOUT_REDIRECT_URL=http://localhost:3000
+KINDE_POST_LOGIN_REDIRECT_URL=http://localhost:3000/dashboard
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+# Database Configuration
+NEXT_PUBLIC_DATABASE_URL_CONFIG=your_neon_database_url
+```
 
-## Deploy on Vercel
+### 4. Start Development Server
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+# Using npm
+npm run dev
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+# Using yarn
+yarn dev
+```
 
-https://organic-guide-px9rvxx56gvfrp5q-3000.app.github.dev/
+🌐 Open your browser and visit `http://localhost:3000`
+
+## 🔧 Available Scripts
+
+| Script | Command | Description |
+|--------|---------|-------------|
+| `dev` | `npm run dev` | Start development server |
+| `build` | `npm run build` | Create production build |
+| `start` | `npm run start` | Run production server |
+| `lint` | `npm run lint` | Check code quality |
+| `db:push` | `npm run db:push` | Update database schema |
+| `db:studio` | `npm run db:studio` | Open database management interface |
+
+## 📊 Database Setup
+
+### Neon Database Configuration
+1. Create an account at Neon Database
+2. Set up a new database project
+3. Copy your database connection URL
+4. Add the URL to your `.env.local` file
+
+### Pushing Database Changes
+```bash
+npm run db:push
+```
+
+### Opening Database Studio
+```bash
+npm run db:studio
+```
+
+## 🤝 Contributing Guidelines
+
+1. Fork the repository
+2. Create a feature branch
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+3. Commit your changes
+   ```bash
+   git commit -m 'Add some amazing feature'
+   ```
+4. Push to the branch
+   ```bash
+   git push origin feature/your-feature-name
+   ```
+5. Open a Pull Request
+
+## 📝 Notes
+
+- This is a private project
+- Unauthorized use, distribution, or modification is prohibited
+- Contact project maintainers for permissions
+
+## 🆘 Troubleshooting
+
+- Ensure all environment variables are correctly set
+- Verify Node.js and npm versions
+- Check database connection
+- Review Kinde Auth configuration
+
+## 📞 Support
+
+For issues or questions, please:
+- Check the documentation
+- Open a GitHub issue
+- Contact the project maintainers
+
+## 📜 License
+
+Proprietary software. All rights reserved.
